@@ -64,6 +64,7 @@ ZIP:
 	{
 		Progress(0)
 		UpdateLog("ERROR!")
+		FileAppend, , %DIR%\Projects\%projname%\EXTRACTED
 		GoSub, Button
 		return
 	}
@@ -305,6 +306,7 @@ COMPILE:
 	{
 		Progress(0)
 		UpdateLog("ERROR!")
+		FileAppend, , %DIR%\Projects\%projname%\DECOMPILED
 		GoSub, Button
 		return
 	}

@@ -32,9 +32,8 @@ If ErrorLevel
 DPI := DPI / 96
 FSize := 2 - DPI + 1
 DIR = %A_ScriptDir%
-FileGetVersion, LVER, %A_ScriptFullPath%
-StringLeft,VER,LVER,3
-TITLE = APK Tools v%VER%0
+FileGetVersion, VER, %A_ScriptFullPath%
+TITLE = APK Tools
 
 
 ; ##################################################
@@ -52,7 +51,7 @@ Gui +LastFound
 WinGetPos, , , GuiWidth
 GuiControlGet, GuiInfo, Pos, Text
 GuiControl, Move, Text, % "x" GuiWidth/2 - GuiInfoW/2
-Gui, Show, Center, %TITLE%
+Gui, Show, Center, %TITLE% v%VER%
 
 IfNotExist, APK Files
 	FileCreateDir, APK Files
@@ -176,10 +175,10 @@ IfNotExist, %LogFile%
 UpdateLog("Session Started!")
 RunWait, %comspec% /C java -version,,hide
 If ErrorLevel
-	MsgBox, 262192, %TITLE%, JAVA NOT INSTALLED!
+	MsgBox, 262192, %TITLE% v%VER%, JAVA NOT INSTALLED!
 RunWait, %comspec% /C "%DIR%\tools\adb.exe" version,,hide
 If ErrorLevel
-	MsgBox, 262192, %TITLE%, ABD NOT FOUND!
+	MsgBox, 262192, %TITLE% v%VER%, ABD NOT FOUND!
 OnMessage(0x200, "WM_MOUSEMOVE")
 OnMessage(0x102, "WM_CHECKINPUT")
 return

@@ -69,7 +69,7 @@ GUI:
 	Gui, Add, Text, x+15 yp+3, .arsc
 	Gui, Add, DropDownList, x+10 yp-3 w70 gCL vRCLS, NONE||LOW|FAST|NORM|MAX|ULTRA|
 	Gui, Add, Edit, x+20 w50 Limit4 vHS HWNDhEdit, %hs%
-	Gui, Show, w400 h485 Center, %TITLE% v%VER%
+	Gui, Show, w400 h485 Center, %TITLE% v%VERSION%
 return
 
 GuiDropFiles:
@@ -88,7 +88,7 @@ GuiDropFiles:
 		GuiControl, , apkname, %projname%
 	}
 	Else
-		MsgBox, 262160, %TITLE% v%VER%, Invalid File
+		MsgBox, 262160, %TITLE% v%VERSION%, Invalid File
 return
 
 Button:
@@ -245,9 +245,14 @@ return
 
 About:
 	Gui, 2: -MinimizeBox -MaximizeBox -DPIScale
+	;@Ahk2Exe-IgnoreBegin
+	Gui, 2: Add, Picture, x10 y10 w32 h32, PrivaTech.ico
+	;@Ahk2Exe-IgnoreEnd
+	/*@Ahk2Exe-Keep
 	Gui, 2: Add, Picture, x10 y10 w32 h32, %A_ScriptName%
+	*/
 	Gui, 2: Font, % "s" 12/DPI "w" 350*FSize, Verdana
-	Gui, 2: Add, Text, x53 y10, %TITLE% v%VER%
+	Gui, 2: Add, Text, x53 y10, %TITLE% v%VERSION%
 	Gui, 2: Font, % "s" 8/DPI
 	Gui, 2: Add, Text, xp y+5, By:%A_Space%
 	Gui, 2: Add, Text, x+0 cBlue gLink vLink, PrivaTech -- GAFT

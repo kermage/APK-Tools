@@ -14,7 +14,7 @@ SELECT:
 			GuiControl, , apkname, %apkname%
 		}
 		Else
-			MsgBox, 262160, %TITLE% v%VER%, Invalid File
+			MsgBox, 262160, %TITLE% v%VERSION%, Invalid File
 	}
 	GoSub, Button
 return
@@ -23,7 +23,7 @@ EXTRACT:
 	GoSub, Button
 	If !projname
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Select a project first
+		MsgBox, 262160, %TITLE% v%VERSION%, Select a project first
 		GoSub, Button
 		return
 	}
@@ -46,13 +46,13 @@ ZIP:
 	GoSub, Button
 	If !projname
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Select a project first
+		MsgBox, 262160, %TITLE% v%VERSION%, Select a project first
 		GoSub, Button
 		return
 	}
 	IfNotExist, %DIR%\Projects\%projname%\EXTRACTED
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Extract %projname% first
+		MsgBox, 262160, %TITLE% v%VERSION%, Extract %projname% first
 		GoSub, Button
 		return
 	}
@@ -82,13 +82,13 @@ OPTIMIZE:
 	GoSub, Button
 	If !projname
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Select a project first
+		MsgBox, 262160, %TITLE% v%VERSION%, Select a project first
 		GoSub, Button
 		return
 	}
 	IfNotExist, %DIR%\Projects\%projname%
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Extract / Decompile %projname% first
+		MsgBox, 262160, %TITLE% v%VERSION%, Extract / Decompile %projname% first
 		GoSub, Button
 		return
 	}
@@ -154,7 +154,7 @@ SIGN:
 			Progress(0)
 		}
 		Else
-			MsgBox, 262160, %TITLE% v%VER%, Invalid File
+			MsgBox, 262160, %TITLE% v%VERSION%, Invalid File
 	}
 	GoSub, Button
 return
@@ -187,7 +187,7 @@ GEN:
 				GuiControl, 3:, KPATH, %storename%
 			}
 			Else
-				MsgBox, 262160, %TITLE% v%VER%, Invalid File
+				MsgBox, 262160, %TITLE% v%VERSION%, Invalid File
 		}				
 	return
 	3ButtonSubmit:
@@ -204,7 +204,7 @@ GEN:
 			Progress(0)
 		}
 		Else
-			MsgBox, 262160, %TITLE% v%VER%, Enter private key details first
+			MsgBox, 262160, %TITLE% v%VERSION%, Enter private key details first
 	3GuiClose:
 	3GuiEscape:
 		Gui 3: Destroy
@@ -233,7 +233,7 @@ ZIPALIGN:
 			Progress(0)
 		}
 		Else
-			MsgBox, 262160, %TITLE% v%VER%, Invalid File
+			MsgBox, 262160, %TITLE% v%VERSION%, Invalid File
 	}
 	GoSub, Button
 return
@@ -242,7 +242,7 @@ DECOMPILE:
 	GoSub, Button
 	If !projname
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Select a project first
+		MsgBox, 262160, %TITLE% v%VERSION%, Select a project first
 		GoSub, Button
 		return
 	}
@@ -278,13 +278,13 @@ COMPILE:
 	GoSub, Button
 	If !projname
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Select a project first
+		MsgBox, 262160, %TITLE% v%VERSION%, Select a project first
 		GoSub, Button
 		return
 	}
 	IfNotExist, %DIR%\Projects\%projname%\DECOMPILED
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Decompile %projname% first
+		MsgBox, 262160, %TITLE% v%VERSION%, Decompile %projname% first
 		GoSub, Button
 		return
 	}
@@ -399,7 +399,7 @@ INSTALL:
 			Progress(0)
 		}
 		Else
-			MsgBox, 262160, %TITLE% v%VER%, Invalid File
+			MsgBox, 262160, %TITLE% v%VERSION%, Invalid File
 	}
 	GoSub, Button
 return
@@ -492,7 +492,7 @@ FRAMEWORK:
 		}
 		Else
 		{
-			MsgBox, 262160, %TITLE% v%VER%, Invalid File
+			MsgBox, 262160, %TITLE% v%VERSION%, Invalid File
 			GoSub, Button
 			return
 		}
@@ -576,7 +576,7 @@ GENKEY:
 	GoSub, Button
 	If (!keyown) OR (!keyname) OR (!keyalias) OR (!keypass)
 	{
-		MsgBox, 262160, %TITLE% v%VER%, Enter private key details first
+		MsgBox, 262160, %TITLE% v%VERSION%, Enter private key details first
 		GoSub, Button
 		return
 	}

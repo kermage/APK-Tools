@@ -12,33 +12,42 @@
 
 
 ; ##################################################
-; ################### PARAMETERS ###################
+; ##################### CONFIG #####################
 ; ##################################################
+#MaxThreads 20
 #NoEnv
-#SingleInstance force
-#Persistent
-#MaxThReads 20
 #NoTrayIcon
+#Persistent
+#SingleInstance force
 
+Process, Priority,, High
 SendMode Input
-SetWorkingDir %A_ScriptDir%
-Process, priority, , High
 SetBatchLines, -1
+SetKeyDelay, -1
 SetTitleMatchMode, 2
 SetTitleMatchMode, Slow
+SetTitleMatchMode, RegEx
+
+
+; ##################################################
+; ################### INITIALIZE ###################
+; ##################################################
+SetWorkingDir %A_ScriptDir%
+;@Ahk2Exe-IgnoreBegin
+VERSION := "1.0.0.0"
+;@Ahk2Exe-IgnoreEnd
+/*@Ahk2Exe-Keep
+FileGetVersion, VERSION, %A_ScriptFullPath%
+*/
+TITLE = APK Tools
+
 RegRead, DPI, HKEY_CURRENT_USER, Control Panel\Desktop\WindowMetrics, AppliedDPI
 If ErrorLevel
 	DPI = 96
 DPI := DPI / 96
 FSize := 2 - DPI + 1
 DIR = %A_ScriptDir%
-FileGetVersion, VER, %A_ScriptFullPath%
-TITLE = APK Tools
 
-
-; ##################################################
-; ################### INITIALIZE ###################
-; ##################################################
 Gui, +Disabled -SysMenu -DPIScale
 Gui, Font, % "s" 10/DPI "w" 350*FSize, Verdana
 Gui, Add, Text, vText cRed, Please WAIT!
@@ -181,7 +190,13 @@ If ErrorLevel
 	MsgBox, 262192, %TITLE% v%VER%, ABD NOT FOUND!
 OnMessage(0x200, "WM_MOUSEMOVE")
 OnMessage(0x102, "WM_CHECKINPUT")
-return
 
+
+return ; =========== END OF AUTO EXECUTE ===========
+
+
+; ##################################################
+; #################### INCLUDES ####################
+; ##################################################
 #include func.ahk
 #include gui.ahk

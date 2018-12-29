@@ -141,6 +141,12 @@ keypass =
 ; ##################################################
 ; ###################### MAIN ######################
 ; ##################################################
+;@Ahk2Exe-IgnoreBegin
+Menu, Tray, Icon, %TITLE%.ico
+;@Ahk2Exe-IgnoreEnd
+/*@Ahk2Exe-Keep
+Menu, Tray, Icon, %A_ScriptFullPath%
+*/
 WM_MOUSEMOVE()
 {
     static CurrControl, PrevControl, _TT

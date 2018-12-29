@@ -246,7 +246,7 @@ return
 About:
 	Gui, 2: -MinimizeBox -MaximizeBox -DPIScale
 	;@Ahk2Exe-IgnoreBegin
-	Gui, 2: Add, Picture, x10 y10 w32 h32, PrivaTech.ico
+	Gui, 2: Add, Picture, x10 y10 w32 h32, %TITLE%.ico
 	;@Ahk2Exe-IgnoreEnd
 	/*@Ahk2Exe-Keep
 	Gui, 2: Add, Picture, x10 y10 w32 h32, %A_ScriptName%

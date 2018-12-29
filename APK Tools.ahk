@@ -8,7 +8,6 @@
 ;@Ahk2Exe-SetTrademarks PrivaTech -- GAFT
 ;@Ahk2Exe-SetOrigFilename APK Tools.ahk
 ;@Ahk2Exe-SetCompanyName PrivaTech -- GAFT
-;@Ahk2Exe-SetMainIcon PrivaTech.ico
 
 
 ; ##################################################

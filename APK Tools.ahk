@@ -3,7 +3,7 @@
 ; ##################################################
 ;@Ahk2Exe-SetName APK Tools
 ;@Ahk2Exe-SetDescription APK Tools
-;@Ahk2Exe-SetVersion 1.0.0-alpha
+;@Ahk2Exe-SetVersion 1.0.0
 ;@Ahk2Exe-SetCopyright genealyson.torcende@gmail.com
 ;@Ahk2Exe-SetTrademarks PrivaTech -- GAFT
 ;@Ahk2Exe-SetOrigFilename APK Tools.ahk
@@ -33,10 +33,11 @@ SetTitleMatchMode, RegEx
 ; ##################################################
 SetWorkingDir %A_ScriptDir%
 ;@Ahk2Exe-IgnoreBegin
-VERSION := "1.0.0.0"
+VERSION := "1.0.0"
 ;@Ahk2Exe-IgnoreEnd
 /*@Ahk2Exe-Keep
 FileGetVersion, VERSION, %A_ScriptFullPath%
+VERSION := Substr( VERSION, 1, -2 )
 */
 TITLE = APK Tools
 

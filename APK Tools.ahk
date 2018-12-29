@@ -59,7 +59,7 @@ Gui +LastFound
 WinGetPos, , , GuiWidth
 GuiControlGet, GuiInfo, Pos, Text
 GuiControl, Move, Text, % "x" GuiWidth/2 - GuiInfoW/2
-Gui, Show, Center, %TITLE% v%VER%
+Gui, Show, Center, %TITLE% v%VERSION%
 
 IfNotExist, APK Files
 	FileCreateDir, APK Files
@@ -189,10 +189,10 @@ IfNotExist, %LogFile%
 UpdateLog("Session Started!")
 RunWait, %comspec% /C java -version,,hide
 If ErrorLevel
-	MsgBox, 262192, %TITLE% v%VER%, JAVA NOT INSTALLED!
+	MsgBox, 262192, %TITLE% v%VERSION%, JAVA NOT INSTALLED!
 RunWait, %comspec% /C "%DIR%\tools\adb.exe" version,,hide
 If ErrorLevel
-	MsgBox, 262192, %TITLE% v%VER%, ABD NOT FOUND!
+	MsgBox, 262192, %TITLE% v%VERSION%, ABD NOT FOUND!
 OnMessage(0x200, "WM_MOUSEMOVE")
 OnMessage(0x102, "WM_CHECKINPUT")
 

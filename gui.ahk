@@ -252,7 +252,7 @@ About:
 	Gui, 2: Add, Picture, x10 y10 w32 h32, %A_ScriptName%
 	*/
 	Gui, 2: Font, % "s" 12/DPI "w" 350*FSize, Verdana
-	Gui, 2: Add, Text, x53 y10, %TITLE% v%VERSION%
+	Gui, 2: Add, Text, x53 y10 gLink, %TITLE% v%VERSION%
 	Gui, 2: Font, % "s" 8/DPI
 	Gui, 2: Add, Text, xp y+5, By:%A_Space%
 	Gui, 2: Add, Text, x+0 cBlue gLink vLink, PrivaTech -- GAFT
@@ -267,7 +267,7 @@ return
 return
 
 Link:
-	Run, http://goo.gl/l3NfAS
+	Run, https://github.com/kermage/APK-Tools
 return
 
 GuiClose:
